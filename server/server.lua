@@ -3,13 +3,17 @@ local RSGCore = exports['rsg-core']:GetCoreObject()
 CreateThread(function() 
     for _, shopConfig in pairs(Config.StoreLocations) do 
         local itemTable = Config.Products[shopConfig.products]
-        exports['rsg-inventory']:CreateShop({
-            name = shopConfig.name,
-            label = shopConfig.label,
-            slots = #itemTable,
-            items = itemTable,
-            persistentStock = shopConfig.persistentStock,
-        })
+        if itemTable then
+            exports['rsg-inventory']:CreateShop({
+                name = shopConfig.name,
+                label = shopConfig.label,
+                slots = #itemTable,
+                items = itemTable,
+                persistentStock = shopConfig.persistentStock,
+            })
+        else
+            print('^1[rsg-shops] ERROR: Product category "' .. tostring(shopConfig.products) .. '" not found for shop "' .. tostring(shopConfig.name) .. '". Skipping shop creation.^7')
+        end
     end
 end)
 
