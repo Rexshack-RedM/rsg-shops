@@ -1,3 +1,28 @@
 {
-    "lang_1": "Abrir"
-    }
+    "lang_1": "Abrir ",
+    "spawn_npc_invalid_data": "SpawnShopNPC llamado con shopData inválido",
+    "model_load_failed": "Error al cargar el modelo \"%{model}\" para la tienda \"%{shop}\"",
+    "npc_create_failed": "Error al crear el NPC para la tienda \"%{shop}\"",
+    "ox_target_setup_failed": "Error al configurar ox_target para la tienda \"%{shop}\": %{error}",
+    "shop_skipped_missing_fields": "Entrada de tienda omitida: nombre o shopcoords faltantes",
+    "blip_create_failed": "Error al crear el blip para \"%{shop}\"",
+    "unknown_product_category": "StoreLocations[%{shop}] referencia una categoría de producto desconocida \"%{category}\"",
+    "invalid_shop_name": "Una entrada de StoreLocations tiene un campo \"name\" faltante o inválido",
+    "missing_shopcoords": "StoreLocations[%{shop}] no tiene shopcoords",
+    "config_validation_failed": "Validación de configuración fallida — las tiendas pueden no funcionar correctamente",
+    "shop_create_failed": "Error al crear la tienda \"%{shop}\": %{error}",
+    "invalid_player_store": "Jugador inválido (source=%{source}) intentó abrir una tienda",
+    "unknown_shop_attempt": "El jugador %{player} intentó abrir una tienda desconocida \"%{shop}\"",
+    "mismatched_products": "El jugador %{player} envió productos incorrectos \"%{products}\" para la tienda \"%{shop}\"",
+    "no_valid_ped": "El jugador %{player} no tiene un ped válido",
+    "too_far_from_shop": "El jugador %{player} está demasiado lejos de la tienda \"%{shop}\"",
+    "product_category_missing": "La categoría de producto \"%{category}\" falta en Config.Products",
+    "shop_open_failed": "Error al abrir la tienda \"%{shop}\" para el jugador %{player}: %{error}",
+    "version_read_failed": "¡No se puede leer la versión actual del recurso desde fxmanifest.lua!",
+    "http_check_failed": "Error de verificación de versión (HTTP %{status}). Verifique su internet o la URL de GitHub.",
+    "empty_version_data": "Datos de versión vacíos recibidos de GitHub.",
+    "running_latest": "¡Está usando la versión más reciente!",
+    "outdated_version": "¡DESACTUALIZADO! Actualice a la versión %{version}",
+    "download_from": "Descargar desde: https://github.com/Rexshack-RedM/%{resource}",
+    "dev_build_detected": "Está usando una versión más nueva (%{current}) que la remota (%{remote}). ¿Posible versión de desarrollo?"
+}
