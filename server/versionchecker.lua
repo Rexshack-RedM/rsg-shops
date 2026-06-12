@@ -4,6 +4,7 @@
 
 local resourceName = GetCurrentResourceName()
 local githubRawBase = 'https://raw.githubusercontent.com/Rexshack-RedM/rsg-versioncheckers/main/'
+lib.locale()
 
 local function printLog(type, message)
     local color = (type == 'success' and '^2') or (type == 'warning' and '^3') or '^1'
@@ -42,7 +43,7 @@ local function CheckVersion()
 
     PerformHttpRequest(versionUrl, function(statusCode, remoteVersion, headers)
         if statusCode ~= 200 then
-            printLog('error', locale('http_check_failed', { status = statusCode }))
+            printLog('error', locale('http_check_failed', statusCode))
             return
         end
 
@@ -60,10 +61,10 @@ local function CheckVersion()
         end
 
         if isVersionOutdated(currentVersion, remoteVersion) then
-            printLog('error', locale('outdated_version', { version = remoteVersion }))
-            printLog('error', locale('download_from', { resource = GetCurrentResourceName() }))
+            printLog('error', locale('outdated_version', remoteVersion))
+            printLog('error', locale('download_from', resourceName))
         else
-            printLog('warning', locale('dev_build_detected', { current = currentVersion, remote = remoteVersion }))
+            printLog('warning', locale('dev_build_detected', currentVersion, remoteVersion))
         end
     end, 'GET')
 end

@@ -25,13 +25,13 @@ local function SpawnShopNPC(shopData)
 
     local modelLoaded, modelLoadError = pcall(lib.requestModel, model, 5000)
     if not modelLoaded or not HasModelLoaded(joaat(model)) then
-        logWarn(locale('model_load_failed', { model = tostring(model), shop = tostring(shopData.name) }))
+        logWarn(locale('model_load_failed', tostring(model), tostring(shopData.name)))
         return nil
     end
 
     local npc = CreatePed(model, coords.x, coords.y, coords.z - 1, coords.w, false, false, false, false)
     if not npc or npc == 0 then
-        logWarn(locale('npc_create_failed', { shop = tostring(shopData.name) }))
+        logWarn(locale('npc_create_failed', tostring(shopData.name)))
         return nil
     end
 
@@ -67,7 +67,7 @@ local function SetupNPCTarget(npc, shopData)
         }
     })
     if not success then
-        logWarn(locale('ox_target_setup_failed', { shop = tostring(shopData.name), error = tostring(err) }))
+        logWarn(locale('ox_target_setup_failed', tostring(shopData.name), tostring(err)))
     end
 end
 
@@ -106,7 +106,7 @@ CreateThread(function()
                 SetBlipScale(StoreBlip, v.blipscale)
                 SetBlipName(StoreBlip, v.label)
             else
-                logWarn(locale('blip_create_failed', { shop = tostring(v.label) }))
+                logWarn(locale('blip_create_failed', tostring(v.label)))
             end
         end
 
